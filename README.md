@@ -32,6 +32,35 @@
 - On ajoute un fichier `how_launch.md` pour savoir comment lancer l'application (+ option lancement docker-compose).
   ![](assets/how_launch.png)
 
+
+# Tests et qualité
+
+# I - Tests E2E (Selenium)
+Les tests E2E, ou “End to End”, permettent de vérifier que l’ensemble du parcours utilisateur fonctionne, du début à la fin. Donc tester toutes les étapes importantes comme la connexion, la création, la modification et la suppression d’une tâche, pour s’assurer que le système réagit bien.
+
+Selenium est un outil qui automatise les interactions avec le navigateur web. Il simule un utilisateur réel en cliquant sur les boutons, remplissant les formulaires et naviguant sur le site.
+
+On commence par prendre connaissance des interfaces backend et frontend.
+Dans ce projet, il est nécessaire de créer un dossier tests qui contiendra l’ensemble des tests E2E réalisés avec Selenium.
+
+Nous commençons par deux tests :
+  - Connexion
+  - Création d’une tâche
+
+    
+ ![](assets/1.png)
+
+ 
+Ensuite, nous procédons à la vérification directement sur le site.
+
+ ![](assets/2.PNG)
+ 
+Passons maintenant à des tests CRUD simples, ce qui donne un total de 5 tests :
+
+ ![](assets/3.PNG)
+ ![](assets/4.PNG)
+
+
 # II - ESLINT
 
 ---
