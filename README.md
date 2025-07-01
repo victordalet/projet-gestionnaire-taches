@@ -18,9 +18,9 @@
 - On rajoute une règle de protection de la branche `main` dans les paramètres du repo GitHub.
 - On active les options suivantes :
     - Require a pull request before merging
-    - Require status checks to pass
+    - Require status checks to pass (on ajoute ici nos différents test comme dans le screen ci-dessous)
 
-![](assets/protect_branch.png)
+![](assets/branch_protected.png)
 
 ### Invitation des membres
 
