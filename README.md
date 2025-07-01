@@ -98,11 +98,24 @@ npx eslint .
 
 # III Tests Unitaires et Intégrations d'API endpoints
 
+---
+
 Pour les tests unitaires, **Jest** se révèle particulièrement adapté : il permet de vérifier isolément le comportement de chaque fonction, module ou middleware de votre application. Grâce à son exécution rapide et à sa syntaxe expressive (`describe`, `it`/`test`, `expect`), vous pouvez écrire des scénarios qui couvrent tous les cas d’usage de vos utilitaires, de votre logique métier et de vos validateurs. De plus, Jest intègre nativement la création de mocks et de spies, ce qui simplifie la simulation de dépendances externes et garde vos tests légers et déterministes.
 
 Une fois cette couche unitaire solidement en place, il devient naturel de passer aux **tests d’intégration d’API endpoints**, où l’on vérifie l’enchaînement complet des requêtes HTTP et des réponses JSON en utilisant Jest couplé à Supertest.
 
 ![](assets/image.png)
+
+# IV - Couverture de code
+
+---
+
+Les tests actuels couvrent environ 80 % du code.
+Un rapport détaillé est disponible dans le dossier `backend/coverage/`.
+
+Commandes utilisées :
+npm install --save-dev jest
+npm test
 
 # BONUS : Deployment on docker hub
 
@@ -129,3 +142,6 @@ Une fois cette couche unitaire solidement en place, il devient naturel de passer
   ![](assets/action_docker.png)
 - Si on va sur mon docker-hub, on peut voir que l'image a bien été créée. (https://hub.docker.com/search?q=victordalet)
   ![](assets/docker-hub.png)
+
+
+
