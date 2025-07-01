@@ -117,6 +117,9 @@ Commandes utilisées :
 npm install --save-dev jest
 npm test
 
+![](assets/Coverage.png)
+
+
 # BONUS : Deployment on docker hub
 
 ---
