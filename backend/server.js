@@ -197,6 +197,7 @@ app.get('/api/users', authenticateToken, (req, res) => {
   res.json(usersWithoutPasswords);
 });
 
+
 // Route de santé
 app.get('/health', (req, res) => {
   res.json({ status: 'OK', timestamp: new Date().toISOString() });
