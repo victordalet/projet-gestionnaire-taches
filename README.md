@@ -27,6 +27,11 @@
 - On invite les membres du groupe dans le repo GitHub.
   ![](assets/invite_member.png)
 
+### Ajour doc
+
+- On ajoute un fichier `how_launch.md` pour savoir comment lancer l'application (+ option lancement docker-compose).
+  ![](assets/how_launch.png)
+
 # II - ESLINT
 
 ---
