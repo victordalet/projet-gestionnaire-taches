@@ -1,0 +1,47 @@
+name: CI Backend Tests
+
+on:
+  push:
+    branches:
+      - main
+      - master
+      - 'feat/**'
+  pull_request:
+    branches:
+      - main
+      - master
+      - 'feat/**'
+
+jobs:
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        run: |
+          cd backend
+          npm install
+
+      - name: Run tests
+        run: |
+          cd backend
+          npm test
+
+      - name: Upload coverage report
+        if: ${{ success() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: backend/coverage/

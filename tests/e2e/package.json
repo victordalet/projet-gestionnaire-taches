@@ -1,0 +1,12 @@
+{
+  "name": "e2e-tests",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "mocha --timeout 30000 *.test.js"
+  },
+  "devDependencies": {
+    "mocha": "^10.0.0",
+    "selenium-webdriver": "^4.0.0",
+    "chromedriver": "^100.0.0"
+  }
+}
