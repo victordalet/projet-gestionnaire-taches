@@ -93,3 +93,12 @@ npx eslint .
   ![](assets/action_docker.png)
 - Si on va sur mon docker-hub, on peut voir que l'image a bien été créée. (https://hub.docker.com/search?q=victordalet)
   ![](assets/docker-hub.png)
+
+  ### Couverture de code
+
+Les tests actuels couvrent environ 80 % du code.
+Un rapport détaillé est disponible dans le dossier `backend/coverage/`.
+
+Commandes utilisées :
+npm install --save-dev jest
+npm test
