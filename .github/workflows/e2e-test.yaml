@@ -21,9 +21,9 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install dependencies
+      - name: Install dependencies in backend
         run: npm install
-        working-directory: ./tests/e2e
+        working-directory: ./backend
 
       - name: Setup Chrome browser
         uses: browser-actions/setup-chrome@v1
@@ -33,7 +33,6 @@ jobs:
       - name: Start backend server
         run: |
           cd backend
-          npm install
           npm run dev &
           sleep 10
 
@@ -42,5 +41,4 @@ jobs:
           DISPLAY: :99
         run: |
           Xvfb :99 -screen 0 1280x720x24 &
-          npm test
-        working-directory: ./tests/e2e
+          node ./tests/e2e/tests.js
