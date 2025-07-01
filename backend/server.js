@@ -193,10 +193,7 @@ app.delete('/api/tasks/:id', authenticateToken, (req, res) => {
 
 // Routes des utilisateurs
 app.get('/api/users', authenticateToken, (req, res) => {
-  const usersWithoutPasswords = users.map(user => {
-    const { password, ...rest } = user;
-    return rest;
-  });
+  const usersWithoutPasswords = users.map(({ password, ...user }) => user); //eslint-disable-line no-unused-vars
   res.json(usersWithoutPasswords);
 });
 
