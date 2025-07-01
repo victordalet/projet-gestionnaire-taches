@@ -14,6 +14,9 @@ jobs:
   test:
     name: Run Tests
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
 
     strategy:
       matrix:
@@ -39,4 +42,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: coverage-report
-          path: coverage/
+          path: backend/coverage/
