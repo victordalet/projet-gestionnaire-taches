@@ -5,19 +5,17 @@ on:
     branches:
       - main
       - master
+      - 'feat/**'
   pull_request:
     branches:
       - main
       - master
+      - 'feat/**'
 
 jobs:
   test:
     name: Run Tests
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: backend
-
     strategy:
       matrix:
         node-version: [18.x, 20.x]
@@ -32,10 +30,14 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd backend
+          npm install
 
       - name: Run tests
-        run: npm test
+        run: |
+          cd backend
+          npm test
 
       - name: Upload coverage report
         if: ${{ success() }}
