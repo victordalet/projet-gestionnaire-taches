@@ -60,7 +60,6 @@ Passons maintenant à des tests CRUD simples, ce qui donne un total de 5 tests :
  ![](assets/3.PNG)
  ![](assets/4.PNG)
 
-
 # II - ESLINT
 
 ---
@@ -96,6 +95,14 @@ npx eslint .
 
 - Une fois le code push, on peut voir que le workflow s'exécute.
   ![](assets/eslint_workflow.png)
+
+# III Tests Unitaires et Intégrations d'API endpoints
+
+Pour les tests unitaires, **Jest** se révèle particulièrement adapté : il permet de vérifier isolément le comportement de chaque fonction, module ou middleware de votre application. Grâce à son exécution rapide et à sa syntaxe expressive (`describe`, `it`/`test`, `expect`), vous pouvez écrire des scénarios qui couvrent tous les cas d’usage de vos utilitaires, de votre logique métier et de vos validateurs. De plus, Jest intègre nativement la création de mocks et de spies, ce qui simplifie la simulation de dépendances externes et garde vos tests légers et déterministes.
+
+Une fois cette couche unitaire solidement en place, il devient naturel de passer aux **tests d’intégration d’API endpoints**, où l’on vérifie l’enchaînement complet des requêtes HTTP et des réponses JSON en utilisant Jest couplé à Supertest.
+
+![](assets/image.png)
 
 # BONUS : Deployment on docker hub
 
