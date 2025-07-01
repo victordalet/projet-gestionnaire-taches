@@ -85,7 +85,7 @@ app.post('/api/auth/register', async (req, res) => {
       user: { id: user.id, email: user.email, name: user.name }
     });
   } catch (error) {
-    res.status(500).json({ error: 'Erreur serveur' });
+    res.status(500).json({ error: 'Erreur serveur'  + error });
   }
 });
 
@@ -113,7 +113,7 @@ app.post('/api/auth/login', async (req, res) => {
       user: { id: user.id, email: user.email, name: user.name }
     });
   } catch (error) {
-    res.status(500).json({ error: 'Erreur serveur' });
+    res.status(500).json({ error: 'Erreur serveur' + error });
   }
 });
 
@@ -152,7 +152,7 @@ app.post('/api/tasks', authenticateToken, (req, res) => {
     tasks.push(task);
     res.status(201).json(task);
   } catch (error) {
-    res.status(500).json({ error: 'Erreur serveur' });
+    res.status(500).json({ error: 'Erreur serveur' + error });
   }
 });
 
@@ -177,7 +177,7 @@ app.put('/api/tasks/:id', authenticateToken, (req, res) => {
 
     res.json(tasks[taskIndex]);
   } catch (error) {
-    res.status(500).json({ error: 'Erreur serveur' });
+    res.status(500).json({ error: 'Erreur serveur' + error });
   }
 });
 
@@ -193,7 +193,7 @@ app.delete('/api/tasks/:id', authenticateToken, (req, res) => {
 
 // Routes des utilisateurs
 app.get('/api/users', authenticateToken, (req, res) => {
-  const usersWithoutPasswords = users.map(({ password, ...user }) => user);
+  const usersWithoutPasswords = users.map(({  ...user }) => user);
   res.json(usersWithoutPasswords);
 });
 
